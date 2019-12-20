@@ -45,6 +45,24 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             }
+
+            override fun onItemLongClick(position: Int) {
+                Log.i(TAG, "onItemLongClick at position $position")
+                val dialog =
+                    AlertDialog.Builder(this@MainActivity)
+                        .setTitle("Delete this map?")
+                        .setMessage("Are you sure you want to delete this map?")
+                        .setNegativeButton("Cancel", null)
+                        .setPositiveButton("OK", null)
+                        .show()
+                dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
+                    userMaps.removeAt(position)
+                    mapAdapter.notifyItemRemoved(position)
+                    mapAdapter.notifyItemRangeChanged(position, mapAdapter.itemCount)
+                    serializeUserMaps(this@MainActivity, userMaps)
+                    dialog.dismiss()
+                }
+            }
         })
         rvMaps.adapter = mapAdapter
 

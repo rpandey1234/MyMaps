@@ -14,6 +14,8 @@ class MapsAdapter(val context: Context, val userMaps: List<UserMap>, val onClick
 
     interface OnClickListener {
         fun onItemClick(position: Int)
+
+        fun onItemLongClick(position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,6 +30,10 @@ class MapsAdapter(val context: Context, val userMaps: List<UserMap>, val onClick
         holder.itemView.setOnClickListener {
             Log.i(TAG, "Tapped on position $position")
             onClickListener.onItemClick(position)
+        }
+        holder.itemView.setOnLongClickListener {
+            onClickListener.onItemLongClick(position)
+            return@setOnLongClickListener true
         }
         val textViewTitle = holder.itemView.findViewById<TextView>(R.id.tvMapTItle)
         textViewTitle.text = userMap.title

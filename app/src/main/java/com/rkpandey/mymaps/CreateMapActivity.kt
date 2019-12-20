@@ -112,7 +112,7 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
                 Toast.makeText(this, "Place must have non-empty title and description", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
-            val marker = mMap.addMarker(MarkerOptions().position(latLng).title(title).snippet(description))
+            val marker = mMap.addMarker(MarkerOptions().position(latLng).title(title).snippet(description).draggable(true))
             markers.add(marker)
             dialog.dismiss()
         }
