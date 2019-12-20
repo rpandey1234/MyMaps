@@ -6,4 +6,6 @@ This app displays a map showing markers of important places. You can also create
 
 This app helps you keep track of places that matter to you, whether they’re vacation ideas or places you’ve lived. It's a simpler version of this app the [My Maps](https://play.google.com/store/apps/details?id=com.google.android.apps.m4b) app by Google. 
 
-<img src='https://i.imgur.com/n9URdou.mp4' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.makeagif.com/media/12-20-2019/cFsmQF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/) and uploaded to https://makeagif.com/.
